@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>garrett honke</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2018-01-07T17:46:22-05:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>garrett honke</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Causes and Predictors of Thematic Intrusion on Human Similarity Judgments</title>
+   <link href="http://localhost:4000/2017/11/30/thematic-intrusion-dissertation/"/>
+   <updated>2017-11-30T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/11/30/thematic-intrusion-dissertation</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Catlearn Supplementals Package</title>
+   <link href="http://localhost:4000/2017/02/24/catlearn-suppls-annouce/"/>
+   <updated>2017-02-24T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/02/24/catlearn-suppls-annouce</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Catlearn DIVA Package</title>
+   <link href="http://localhost:4000/2017/02/23/catlearn-diva/"/>
+   <updated>2017-02-23T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/02/23/catlearn-diva</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Category Learning via Feature Switching</title>
+   <link href="http://localhost:4000/2016/07/01/cogsci2016/"/>
+   <updated>2016-07-01T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2016/07/01/cogsci2016</id>
+   <content type="html"></content>
+ </entry>
+ 
+
+</feed>

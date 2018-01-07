@@ -1,0 +1,30 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            garrett honke 
+tagline:          'cognitive neuroscientist'
+description:      'cognitive neuroscientist'
+url:              http://bingweb.binghamton.edu/~ghonke1
+baseurl:          /
+
+author:
+  name:           'garrett honke'
+  url:            https://twitter.com/garretthonke
+
+paginate:         1
+
+# Custom vars
+github:
+  repo:           https://github.com/poole/hyde
+
+# plugins
+plugins:
+  - jekyll-paginate
+  - redcarpet
+  - jekyll-gist
+  - pygments.rb

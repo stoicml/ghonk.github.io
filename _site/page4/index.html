@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      garrett honke &middot; cognitive neuroscientist
+    
+  </title>
+
+  <!--Variables-->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          garrett honke
+        </a>
+      </h1>
+      <p class="lead">cognitive neuroscientist</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">about</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/">blog</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <!-- <span class="sidebar-nav-item">Currently v</span> -->
+    </nav>
+
+    <div>
+    <a class="sidebar-nav-item" href="https://twitter.com/garretthonke"><img src="/img/twitter.svg" width = 35px></a> 
+    <a class="sidebar-nav-item" href="https://github.com/ghonk"><img src="/img/github.svg" width = 35px></a>
+    <a class="sidebar-nav-item" href="https://stackoverflow.com/users/3496308/ghonke"><img src="/img/so.svg" width = 35px></a>
+  </div>
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div>
+    <canvas width="300" height="250"></canvas>
+    <script src="https://d3js.org/d3-array.v0.7.min.js"></script>
+    <script src="https://d3js.org/d3-collection.v0.1.min.js"></script>
+    <script src="https://d3js.org/d3-dispatch.v0.4.min.js"></script>
+    <script src="https://d3js.org/d3-quadtree.v0.7.min.js"></script>
+    <script src="https://d3js.org/d3-timer.v0.4.min.js"></script>
+    <script src="https://d3js.org/d3-force.v0.1.min.js"></script>
+    <script>
+
+      var nodes = d3_array.range(150).map(function(i) {
+        return {
+          index: i
+        };
+      });
+
+      var links = d3_array.range(nodes.length - 1).map(function(i) {
+        return {
+          source: (Math.sqrt(i) | 0),
+          target: i + 1
+        };
+      });
+
+      var simulation = d3_force.forceSimulation(nodes)
+          .drag(.95)
+          .alphaDecay(0.009)
+          .force("charge", d3_force.forceManyBody().strength(-20))
+          .force("link", d3_force.forceLink(links).distance(0))
+          .force("position", d3_force.forcePosition())
+          .on("tick", ticked);
+
+      var canvas = document.querySelector("canvas"),
+          context = canvas.getContext("2d"),
+          width = canvas.width,
+          height = canvas.height;
+
+      function ticked() {
+        context.clearRect(0, 0, width, height);
+        context.save();
+        context.translate(width / 2, height / 2);
+
+        context.beginPath();
+        links.forEach(drawLink);
+        context.strokeStyle = "#aaa";
+        context.stroke();
+
+        context.beginPath();
+        nodes.forEach(drawNode);
+        context.fill();
+        context.strokeStyle = "#fff";
+        context.stroke();
+
+        context.restore();
+      }
+
+      function drawLink(d) {
+        context.moveTo(d.source.x, d.source.y);
+        context.lineTo(d.target.x, d.target.y);
+      }
+
+      function drawNode(d) {
+        context.moveTo(d.x + 3, d.y);
+        context.arc(d.x, d.y, 3, 0, 2 * Math.PI);
+      }
+
+    </script>
+  </div>
+
+<p>I recently received my PhD from Binghamton University's Cognitive and Brain
+    Sciences Program.  Currently, I'm on the job market and wrapping up some 
+    computational modelling/cognitive neuroscience projects.  As a member of 
+    the Learning and Representation in Cognition <a href="http://kurtzlab.psychology.binghamton.edu/">(LARC)</a> 
+    and Brain and Machine <a href="https://www.binghamton.edu/reading-brain/">(BAM)</a> 
+    Laboratories, I conduct basic and applied research on
+    similarity, categorization and learning with behavioral, computational 
+    and electrophysiological methods.</p>
+
+
+    </div>
+
+  </body>
+</html>

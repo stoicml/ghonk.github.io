@@ -1,0 +1,102 @@
+---
+layout: page
+title: blog
+tags: blog
+---
+
+
+<style type="text/css">
+  
+  #content {
+    width: 100%;
+  }
+  
+  .seasontable {
+    width: 100%;
+  }
+  .descriptioncell {
+    padding-left: 5px;
+  }
+  .descriptioncell:hover {
+    cursor: default;
+  }
+  
+  .typecell {
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px 5px;
+    width: 3em;
+  }
+  .code {background-color: #F9FBE7;}
+  .blog {background-color: #C8E6C9;}
+  .app {background-color: #F9FBE7;}
+  .data {background-color: #F9FBE7;}
+  .pdf {background-color: #E0F2F1;}
+  .internalurl a {
+    font-size: 0.5em;
+    float: right;
+    padding-left: 3px;
+    color: #B0BEC5;
+  }
+
+  img.desaturate {
+  filter: grayscale(100%);
+  }
+</style>
+
+
+  <h1>blog | news | updates</h1>
+  <a href="/feed.xml"><img src="/img/feedicons/feed-icon-28x28.png" class="desaturate"></a>
+
+
+<div class="posts">
+  {% assign season_groups = site.posts | group_by: 'season' %}
+
+
+    {% for season in season_groups %}
+  <h2>{{season.name}}</h2>
+
+  <table class="seasontable">
+
+  <!-- iterate over rows -->
+  {% for item in season.items %}
+
+  <tr>
+
+  <!-- define item url -->
+  {% if item.type=='blog' %}
+    {% assign item_url = item.url %}
+  {% else %}
+    {% assign item_url = item.external_url %}
+  {% endif %}
+
+  <!-- indicator -->
+  <td class='typecell {{item.type}}'>
+    <a href="{{item_url}}">{{item.type}}</a>
+  </td>
+
+  <!-- description -->
+  <td class="descriptioncell">
+
+    {{item.excerpt}}
+    
+    {% if item.type != 'blog' %}
+    <td class="internalurl">
+    <a href="{{item.url}}">[perma]</a>
+    </td>
+    {% endif %}
+    </td>
+
+    </tr>
+
+    <!-- item loop -->
+    {% endfor %} 
+    </table>
+
+
+    <!-- season loop -->
+    {% endfor %}
+
+</div>
