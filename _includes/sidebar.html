@@ -3,7 +3,7 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1>
-        <a href="ghonk.github.io">
+        <a href="{{ site.url }}">
           {{ site.title }}
         </a>
       </h1>
@@ -11,7 +11,7 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="ghonk.github.io">about</a>
+      <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="{{ site.url }}">about</a>
 
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
