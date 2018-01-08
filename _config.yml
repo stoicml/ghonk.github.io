@@ -16,15 +16,12 @@ author:
   name:           'garrett honke'
   url:            https://twitter.com/garretthonke
 
-paginate:         1
-
 # Custom vars
 github:
   repo:           https://github.com/poole/hyde
 
 # plugins
 plugins:
-  - jekyll-paginate
   - redcarpet
   - jekyll-gist
   - pygments.rb
