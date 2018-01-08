@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="page">
-  {% if page.title != "blog" %}
+  {% if page.title != "blog" | "cv" %}
   	<h1 class="page-title">{{ page.title }}</h1>
   {% endif %}
 
