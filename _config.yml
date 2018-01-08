@@ -10,7 +10,7 @@ title:            garrett honke
 tagline:          'cognitive neuroscientist'
 description:      'cognitive neuroscientist'
 url:              ghonk.github.io
-baseurl:          
+baseurl:          /
 
 author:
   name:           'garrett honke'
