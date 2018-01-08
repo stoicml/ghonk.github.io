@@ -10,15 +10,11 @@ title:            garrett honke
 tagline:          'cognitive neuroscientist'
 description:      'cognitive neuroscientist'
 url:              ghonk.github.io
-baseurl:          /
+baseurl:          
 
 author:
   name:           'garrett honke'
   url:            https://twitter.com/garretthonke
-
-# Custom vars
-github:
-  repo:           https://github.com/poole/hyde
 
 # plugins
 plugins:
