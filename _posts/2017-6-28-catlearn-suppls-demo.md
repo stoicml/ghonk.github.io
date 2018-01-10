@@ -1,12 +1,3 @@
----
-title: Getting Started with Catlearn and Catlearn Supplementals
-excerpt: Brief introduction to machine learning and cognitive modeling with Catlearn and Catlearn Supplementals
-tags: machine learning, cognitive modeling, catlearn
-season: summer 2017
-type: blog
-layout: post
----
-
 background
 ==========
 
@@ -96,12 +87,12 @@ Here's what our training matrix looks like after the setup procedure:
     head(tr)
 
     ##      ctrl trial blk example  x1  x2  x3  x4 t1 t2 t3
-    ## [1,]    1     1   1      17 5.4 3.9 1.3 0.4  1 -1 -1
-    ## [2,]    0     2   1      78 6.7 3.0 5.0 1.7 -1  1 -1
-    ## [3,]    0     3   1      33 5.2 4.1 1.5 0.1  1 -1 -1
-    ## [4,]    0     4   1       7 4.6 3.4 1.4 0.3  1 -1 -1
-    ## [5,]    0     5   1      39 4.4 3.0 1.3 0.2  1 -1 -1
-    ## [6,]    0     6   1      77 6.8 2.8 4.8 1.4 -1  1 -1
+    ## [1,]    1     1   1      72 6.1 2.8 4.0 1.3 -1  1 -1
+    ## [2,]    0     2   1      52 6.4 3.2 4.5 1.5 -1  1 -1
+    ## [3,]    0     3   1      48 4.6 3.2 1.4 0.2  1 -1 -1
+    ## [4,]    0     4   1      95 5.6 2.7 4.2 1.3 -1  1 -1
+    ## [5,]    0     5   1      71 5.9 3.2 4.8 1.8 -1  1 -1
+    ## [6,]    0     6   1      91 5.5 2.6 4.4 1.2 -1  1 -1
 
 Finally, we run the model with our state list `st` and training matrix
 `tr`
@@ -116,15 +107,15 @@ We can examine performance of the model easily.
 
     response_probs(tr, diva_model$out, blocks = TRUE)
 
-    ##  [1] 0.8371296 0.8303125 0.8209810 0.8232518 0.7991805 0.8008306 0.8377113
-    ##  [8] 0.8187551 0.7954137 0.8329478 0.8157742 0.8050159
+    ##  [1] 0.7577557 0.7598702 0.7578350 0.7766145 0.7807186 0.8147308 0.7357351
+    ##  [8] 0.7597663 0.8020776 0.7079642 0.7874584 0.7700277
 
 `plot_training` is a simple function used to plot the learning of one or
 more models.
 
     plot_training(list(response_probs(tr, diva_model$out, blocks = TRUE)))
 
-![](2017-28-6-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](2017-6-28-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-8-1.png)
 
 So with no optimization, we can see that DIVA learns about as much as it
 is going to learn after one pass through our 150 item training set
@@ -141,19 +132,19 @@ with the original training matrix.
     tail(trn_result)
 
     ##         ctrl trial blk example  x1  x2  x3  x4 t1 t2 t3              
-    ## [1795,]    0  1795  12      54 5.5 2.3 4.0 1.3 -1  1 -1 0.0000 1.0000
-    ## [1796,]    0  1796  12      79 6.0 2.9 4.5 1.5 -1  1 -1 0.0110 0.9356
-    ## [1797,]    0  1797  12     115 5.8 2.8 5.1 2.4 -1 -1  1 0.0280 0.5000
-    ## [1798,]    0  1798  12      94 5.0 2.3 3.3 1.0 -1  1 -1 0.2547 0.5181
-    ## [1799,]    0  1799  12     134 6.3 2.8 5.1 1.5 -1 -1  1 0.0156 0.0293
-    ## [1800,]    0  1800  12     118 7.7 3.8 6.7 2.2 -1 -1  1 0.2585 0.2839
+    ## [1795,]    0  1795  12     141 6.7 3.1 5.6 2.4 -1 -1  1 0.0275 0.3715
+    ## [1796,]    0  1796  12      71 5.9 3.2 4.8 1.8 -1  1 -1 0.0000 0.9999
+    ## [1797,]    0  1797  12     142 6.9 3.1 5.1 2.3 -1 -1  1 0.0000 0.0001
+    ## [1798,]    0  1798  12      67 5.6 3.0 4.5 1.5 -1  1 -1 0.0000 1.0000
+    ## [1799,]    0  1799  12      98 6.2 2.9 4.3 1.3 -1  1 -1 0.0002 0.9988
+    ## [1800,]    0  1800  12     108 7.3 2.9 6.3 1.8 -1 -1  1 0.1076 0.2002
     ##               
-    ## [1795,] 0.0000
-    ## [1796,] 0.0534
-    ## [1797,] 0.4720
-    ## [1798,] 0.2271
-    ## [1799,] 0.9551
-    ## [1800,] 0.4576
+    ## [1795,] 0.6010
+    ## [1796,] 0.0001
+    ## [1797,] 0.9999
+    ## [1798,] 0.0000
+    ## [1799,] 0.0009
+    ## [1800,] 0.6922
 
 You might also like to see how a number of initializations do on the
 problem. It's good practice to average over a series of
@@ -170,7 +161,7 @@ initializations---something we did not do in this demonstration.
     # # # plot the leanrning curves
     plot_training(model_resp_probs)
 
-![](2017-28-6-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](2017-6-28-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 Here we see that there is a fair amount of variation across
 initializations. This suggests it would be smart to follow the typical
