@@ -44,9 +44,6 @@ will call `tr`.
 
     # # # load the libraries
     library(catlearn)
-
-    ## Warning: package 'catlearn' was built under R version 3.4.3
-
     library(catlearn.suppls)
 
 *First, we will construct the model's state.* For this demonstration
@@ -66,7 +63,7 @@ model hyper-parameters is available in the normal places (e.g.,
     ##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
     ##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
     ##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
-    ##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+    ##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 ...
 
     # find the inputs minus the labels
     ins <- iris[,colnames(iris) != 'Species']
@@ -80,8 +77,8 @@ model hyper-parameters is available in the normal places (e.g.,
 
     # construct a state list
     st <- list(learning_rate = 0.15, num_feats = nfeats, num_hids = 6, num_cats = ncats,
-      beta_val = 0, phi = 1, continuous = TRUE, in_wts = NULL, out_wts = NULL, wts_range = 1,
-      wts_center = 0, colskip = 4)
+      beta_val = 0, phi = 1, continuous = TRUE, in_wts = NULL, out_wts = NULL, 
+      wts_range = 1, wts_center = 0, colskip = 4)
 
 We can then use `catleanr.suppls` to create our training matrix
 
@@ -125,7 +122,7 @@ more models.
 
     plot_training(list(response_probs(tr, diva_model$out, blocks = TRUE)))
 
-![](2017-6-28-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](ghonk.github.io/_posts/2017-6-28-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-8-1.png)
 
 So with no optimization, we can see that DIVA learns about as much as it
 is going to learn after one pass through our 150 item training set
@@ -164,7 +161,7 @@ initializations---something we did not do in this demonstration.
     # # # plot the leanrning curves
     plot_training(model_resp_probs)
 
-![](2017-6-28-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](ghonk.github.io/_posts/2017-6-28-catlearn-suppls-demo_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 Here we see that there is a fair amount of variation across
 initializations. This suggests it would be smart to follow the typical
