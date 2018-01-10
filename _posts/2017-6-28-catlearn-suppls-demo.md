@@ -25,7 +25,7 @@ LaRC Lab. This includes functions to set up the *state* information of a
 model and quickly take rectangular data and format it for the `catlearn`
 design pattern---the stateful list processor.
 
-getting Started
+getting started
 ===============
 
 If you haven't already done so, download the `catlearn` and
