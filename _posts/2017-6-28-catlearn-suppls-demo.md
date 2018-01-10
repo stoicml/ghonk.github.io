@@ -76,9 +76,9 @@ model hyper-parameters is available in the normal places (e.g.,
     ncats <- length(unique(labs))
 
     # construct a state list
-    st <- list(learning_rate = 0.15, num_feats = nfeats, num_hids = 6, num_cats = ncats,
-      beta_val = 0, phi = 1, continuous = TRUE, in_wts = NULL, out_wts = NULL, 
-      wts_range = 1, wts_center = 0, colskip = 4)
+    st <- list(learning_rate = 0.15, num_feats = nfeats, num_hids = 6,
+      num_cats = ncats, beta_val = 0, phi = 1, continuous = TRUE, 
+      in_wts = NULL, out_wts = NULL, wts_range = 1, wts_center = 0, colskip = 4)
 
 We can then use `catlearn.suppls` to create our training matrix
 
