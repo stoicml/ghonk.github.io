@@ -80,7 +80,7 @@ model hyper-parameters is available in the normal places (e.g.,
       beta_val = 0, phi = 1, continuous = TRUE, in_wts = NULL, out_wts = NULL, 
       wts_range = 1, wts_center = 0, colskip = 4)
 
-We can then use `catleanr.suppls` to create our training matrix
+We can then use `catlearn.suppls` to create our training matrix
 
     # tr_init initializes an empty training matrix
     tr <- tr_init(nfeats, ncats)
