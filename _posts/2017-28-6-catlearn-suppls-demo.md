@@ -1,3 +1,13 @@
+---
+title: Getting Started with Catlearn and Catlearn Supplementals
+excerpt: Brief introduction to machine learning and cognitive modeling with Catlearn and Catlearn Supplementals
+tags: machine learning, cognitive modeling, catlearn
+season: Summer 2017
+type: blog
+layout: post
+---
+
+
 Background
 ==========
 
