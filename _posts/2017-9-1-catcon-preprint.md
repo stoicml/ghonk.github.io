@@ -1,6 +1,6 @@
 ---
 title: "Preprint - Category Construction Promotes Transfer"
-excerpt: "Submitted my first preprint with Ken Kurtz - Category Construction Promotes Transfer"
+excerpt: "Submitted the first preprint from the LaRC Lab - Category Construction Promotes Transfer"
 tags: transfer, cognition, paper
 season: fall 2017
 assets: none
