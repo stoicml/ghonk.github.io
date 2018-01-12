@@ -1,7 +1,7 @@
 ---
 title: Grid Search with Catlearn Supplementals
 excerpt: Quick tutorial on grid search in Catlearn Supplementals
-tags: "machine learning", "datascience", "DIVA"
+tags: ml, datascience, DIVA
 season: summer 2017
 type: blog
 layout: post
