@@ -7,8 +7,9 @@ type: blog
 layout: post
 ---
 
+This is a breif demonstration of the grid search helper functions provided in `catlearn.suppls`. There are both parallelized and non-parallelized versions. 
 
-## load libraries 
+load libraries 
 
 
 {% highlight r %}
@@ -16,7 +17,7 @@ library(catlearn)
 library(catlearn.suppls)
 {% endhighlight %}
 
-## *initialize variables.* Create a named list for each hyperparameter you plan to test in the grid search, specify how many random model initializations you'd like to average across to calculate response probabilities for each parameter combination.  
+*initialize variables.* Create a named list for each hyperparameter you plan to test in the grid search, specify how many random model initializations you'd like to average across to calculate response probabilities for each parameter combination.  
 
 
 {% highlight r %}
@@ -43,7 +44,7 @@ fit_type <- 'bestacc'
 crit_fit_vector <- NULL
 {% endhighlight %}
 
-## run it
+run it
 
 
 {% highlight r %}
@@ -72,7 +73,7 @@ system.time(gs_output <- diva_grid_search_par(short_param_list, num_inits, input
 ##    0.03    0.00    3.04
 {% endhighlight %}
 
-## examine the results with `plot_training`
+examine the results with `plot_training`
 
 
 {% highlight r %}
@@ -81,7 +82,7 @@ plot_training(lapply(gs_output, function(x) x$resp_probs))
 
 ![plot of chunk unnamed-chunk-16](/assets/rfigs/unnamed-chunk-16-1.svg)
 
-## examine the detailed results of a grid search run
+examine the detailed results of a grid search run
 
 
 {% highlight r %}
