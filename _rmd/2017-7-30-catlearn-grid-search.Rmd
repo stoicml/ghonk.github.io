@@ -1,0 +1,105 @@
+---
+title: Grid Search with Catlearn Supplementals
+excerpt: Quick tutorial on grid search in Catlearn Supplementals
+tags: "machine learning", "datascience", "DIVA"
+season: summer 2017
+type: blog
+layout: post
+---
+
+
+## load libraries 
+
+```{r, warning=FALSE}
+library(catlearn)
+library(catlearn.suppls)
+```
+
+## *initialize variables.* Create a named list for each hyperparameter you plan to test in the grid search, specify how many random model initializations you'd like to average across to calculate response probabilities for each parameter combination.  
+
+```{r}
+# # parameter list
+short_param_list <- list(beta_val = c(0, 1, 2, 3),
+                    learning_rate = c(.05, .10, .15),
+                         num_hids = c(4, 5, 6))
+
+# long_param_list <- list(beta_val = c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+#                    learning_rate = c(.05, .10, .15, .20, .25, .35),
+#                         num_hids = c(4, 5, 6, 10, 20))
+
+# # # number of initializations
+num_inits = 4
+
+# # # data
+# input_list <- get_test_inputs('type1')
+input_list <- get_test_inputs('type4')
+
+# # # fit type
+fit_type <- 'bestacc'
+
+# # # fit vector
+crit_fit_vector <- NULL
+```
+
+## run it
+
+```{r}
+# # # single core
+system.time(gs_output <- diva_grid_search(short_param_list, num_inits, input_list))
+
+# # # parallelized
+system.time(gs_output <- diva_grid_search_par(short_param_list, num_inits, input_list))
+
+```
+
+## examine the results with `plot_training`
+
+```{r}
+plot_training(lapply(gs_output, function(x) x$resp_probs))
+```
+
+## examine the detailed results of a grid search run
+
+```{r}
+# # # how many paramter settings did we have?
+(n_models <- length(gs_output))
+
+# # # what was the accuracy distribution?
+final_accuracy <- lapply(gs_output, function(x) {x$resp_probs[12]})
+plot(1:n_models, final_accuracy)
+
+# # # what parameter setting had the best performance?
+gs_output[[which.max(final_accuracy)]]$params
+
+# # # what parameter setting had the worst perfomance?
+gs_output[[which.min(final_accuracy)]]$params
+
+# # # plot em
+plot_training(list(gs_output[[which.max(final_accuracy)]]$resp_probs, 
+  gs_output[[which.min(final_accuracy)]]$resp_probs))
+
+# # # what comes as output for each parameter setting?
+names(gs_output[[which.max(final_accuracy)]])
+
+# # # plot the training curves for a parameter subset (hid units = 5)
+hidunit5_respprobs <- list()
+for (i in 1:length(gs_output)) {
+  if (gs_output[[i]]$params$num_hids == 5){
+    hidunit5_respprobs[[paste0(i)]] <- gs_output[[i]]$resp_probs
+  } 
+}
+
+# # # how many?
+(n_models <- length(hidunit5_respprobs))
+
+# # # accuracy?
+plot(1:n_models, unlist(lapply(hidunit5_respprobs, function(x) x[[12]])))
+plot_training(hidunit5_respprobs)
+```
+
+
+
+
+
+
+
