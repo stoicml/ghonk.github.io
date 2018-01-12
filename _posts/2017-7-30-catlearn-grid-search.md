@@ -7,7 +7,7 @@ type: blog
 layout: post
 ---
 
-This is a breif demonstration of the grid search helper functions provided in `catlearn.suppls`. There are both parallelized and non-parallelized versions. 
+This is a brief demonstration of the grid search helper functions provided in `catlearn.suppls`. There are both parallelized and non-parallelized versions. 
 
 load libraries 
 
