@@ -145,7 +145,7 @@ So with no optimization, we can see that DIVA learns about as much as it is goin
 {% highlight r %}
 # # # if we want to look at individual classication decisions, 
 # # # we can do so by combining the model's output with the 
-# # # original trainng matrix
+# # # original training matrix
 
 trn_result <- cbind(tr, round(diva_model$out, 4))
 tail(trn_result)
