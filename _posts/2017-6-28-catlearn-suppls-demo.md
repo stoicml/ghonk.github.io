@@ -181,7 +181,7 @@ plot_training(model_resp_probs)
 
 ![plot of chunk unnamed-chunk-11](/assets/rfigs/unnamed-chunk-11-1.svg)
 
-Here we see that there is a fair amount of variation across initializations. This suggests it would be smart to follow the typical procedure of averaging across a series of models to accurately represent the response probabilities. It also suggests that out approach would likely benefit from some optimization and validation. 
+Here we see that there is a fair amount of variation across initializations. This suggests it would be smart to follow the typical procedure of averaging across a series of models to accurately represent the response probabilities. It also suggests that our approach would likely benefit from some optimization and validation. 
 
 
 Future demos will explore the tools within `catlearn.suppls` used to optimize hyper-parameters and examine the hidden unit representation space toward the goal of uncovering new insight about the problem. 
