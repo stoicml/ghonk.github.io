@@ -1,0 +1,21 @@
+---
+title: Experimenting with text generation to create novel Ferengi Rules of Acquisition
+excerpt: Experimenting with text generation to create novel Ferengi Rules of Acquisition
+tags: ml, datascience, startrek, LSTM
+season: winter 2017
+type: blog
+layout: post
+---
+
+### This post presents an *evolving* attempt to generate novel Ferengi Rules of Acquisition with classic and contemporary approaches to natural language processing. 
+
+![*timely*](C:/Users/garre/Dropbox/desktop/roa.jpg)
+
+### The Ferengi are a species of uber-capitalists with a 1950's mentality re: social issues. The Rules of Acquisition are one part governmental charter, one part values system. They're written as proverbs, so they're naturally short and there aren't a ton of them (~138 in the comprehensive Star Trek universe). In their [own words](https://en.wikipedia.org/wiki/Rules_of_Acquisition):
+
+> "Every Ferengi business transaction is governed by 285 Rules of Acquisition to ensure a fair and honest deal for all parties concerned... well most of them anyway." - Quark, "The Maquis: Part 1". Star Trek: Deep Space Nine
+
+### This means it should be a bit of a challenge to train up an LSTM to generate novel and sensible additions. On the other hand---as you might expect from the socio-cultrual guidelines for a socially-backwards, profit-at-all-costs society---the themes of the Rules are limited, suggesting that a fairly vanilla LSTM might be able to a decent job.   
+
+First Attempt: This approach uses an LSTM to generate charcter-by-character predictions after training on the Rules as a solid block of text.  
+
