@@ -5,6 +5,7 @@ tags: transfer, cognition, learning, paper
 season: spring 2018
 assets: none
 type: pdf
+external_url: /pdfs/manuscripts/premo-et-al-2018.pdf
 layout: external
 ---
 
