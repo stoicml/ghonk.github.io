@@ -28,7 +28,7 @@ title: about
 
       var simulation = d3_force.forceSimulation(nodes)
           .drag(.95)
-          .alphaDecay(0.009)
+          .alphaDecay(0.01)
           .force("charge", d3_force.forceManyBody().strength(-20))
           .force("link", d3_force.forceLink(links).distance(0))
           .force("position", d3_force.forcePosition())
