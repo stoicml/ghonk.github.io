@@ -5,7 +5,7 @@ tags: cognition, similarity, thematic, taxonomic, categories, paper
 season: winter 2019
 assets: none
 type: pdf
-external_url: https://authors.elsevier.com/a/1YZfg2Hx2fPI4
+external_url: https://www.sciencedirect.com/science/article/pii/S0010027719300228
 layout: external
 ---
 
